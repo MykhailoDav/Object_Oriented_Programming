@@ -143,18 +143,24 @@ public class Time
         Hour = totalSeconds / 3600;
         Minute = (totalSeconds % 3600) / 60;
         Second = totalSeconds % 60;
+
+        Hour %= 24; 
     }
+
     public void SubtractSeconds(uint seconds)
     {
-        uint totalSeconds = ToSeconds() - seconds;
+        int totalSeconds = (int)ToSeconds() - (int)seconds;
         if (totalSeconds < 0)
         {
-            totalSeconds = 0; // Avoid negative time
+            totalSeconds += 24 * 60 * 60;
         }
         Hour = (uint)(totalSeconds / 3600);
         Minute = (uint)((totalSeconds % 3600) / 60);
         Second = (uint)(totalSeconds % 60);
+
+        
     }
+
     public bool IsEqualTo(Time otherTime)
     {
         return ToSeconds() == otherTime.ToSeconds();

@@ -13,7 +13,7 @@ namespace Lab_1._5
                 this.triangle = triangle;
                 return true;
             }
-            else { return false; Console.WriteLine("Сторони мають бути рівними"); }
+            else { Console.WriteLine("Сторони мають бути рівними"); return false;  }
 
         }
         public void CalculateArea()
