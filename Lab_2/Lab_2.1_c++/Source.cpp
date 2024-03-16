@@ -32,6 +32,17 @@ int main() {
 
 	cout << "Result: y = a*(x^2) + b*x + c = " << endl;
 	cout << y;
+	int p;
+	cout << "Enter number for checking range:" << endl;
+	cin >> p;
+	if (x.RangeCheck(p))
+	{
+		cout << ("Number is in range") << endl;
+	}
+	else
+	{
+		cout << ("Number is not in range") << endl;
+	}
 	cin.get();
 	return 0;
 }

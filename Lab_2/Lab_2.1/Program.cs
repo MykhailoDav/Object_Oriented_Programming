@@ -36,24 +36,25 @@ public class Program
         floatRange = MakeFloatRange(firstValue, secondValue);
         FloatRange.Display(floatRange);
 
-        // Demonstrating prefix increment
-        FloatRange incrementedFloatRange = ++floatRange;
-        Console.WriteLine("After prefix increment:");
-        Console.WriteLine(incrementedFloatRange);
 
-        // Demonstrating postfix increment
+        FloatRange incrementedFloatRange = floatRange.PrefixIncrement();
         incrementedFloatRange = floatRange++;
-        Console.WriteLine("After postfix increment:");
+        Console.WriteLine("After increment:");
         Console.WriteLine(incrementedFloatRange);
 
-        // Demonstrating prefix decrement
-        FloatRange decrementedFloatRange = --floatRange;
-        Console.WriteLine("After prefix decrement:");
+
+        FloatRange decrementedFloatRange = floatRange.PrefixDecrement();
+        decrementedFloatRange = floatRange--;
+        Console.WriteLine("After decrement:");
         Console.WriteLine(decrementedFloatRange);
 
-        // Demonstrating postfix decrement
-        decrementedFloatRange = floatRange--;
-        Console.WriteLine("After postfix decrement:");
-        Console.WriteLine(decrementedFloatRange);
+        FloatRange a = new(1, 5);
+        FloatRange b = new(3, 4);
+        FloatRange c = new(b);
+        FloatRange y = null;
+        y = a * (floatRange ^ 2) + b * floatRange + c;
+        Console.WriteLine("Result: y = a*(x^2) + b*x + c = ");
+        y.Display();
+
     }
 }

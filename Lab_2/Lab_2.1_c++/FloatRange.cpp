@@ -104,75 +104,7 @@ FloatRange FloatRange::operator--(int) {
 	return temp;
 }
 
+bool FloatRange::RangeCheck(double x) const {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//#include "FloatRange.h"
-//FloatRange& operator=(const FloatRange& other) {
-//	if (this != &other) {
-//		first = other.first;
-//		second = other.second;
-//	}
-//	return *this;
-//}
-//
-//// Операція виводу
-//friend std::ostream& operator<<(std::ostream& out, const FloatRange& range) {
-//	out << "First value: " << range.first << std::endl;
-//	out << "Second value: " << range.second << std::endl;
-//	return out;
-//}
-//
-//// Операція вводу
-//friend std::istream& operator>>(std::istream& in, FloatRange& range) {
-//	std::cout << "Enter first value: ";
-//	in >> range.first;
-//	std::cout << "Enter second value: ";
-//	in >> range.second;
-//	return in;
-//}
-//
-//// Операція приведення типу - перетворення у літерний рядок
-//operator std::string() const {
-//	std::stringstream ss;
-//	ss << "First value: " << first << std::endl;
-//	ss << "Second value: " << second << std::endl;
-//	return ss.str();
-//}
-//
-//// Операція інкременту (префіксна)
-//FloatRange& operator++() {
-//	++first;
-//	return *this;
-//}
-//
-//// Операція декременту (префіксна)
-//FloatRange& operator--() {
-//	--first;
-//	return *this;
-//}
-//
-//// Операція інкременту (постфіксна)
-//FloatRange operator++(int) {
-//	FloatRange temp(*this);
-//	++first;
-//	return temp;
-//}
-//
-//// Операція декременту (постфіксна)
-//FloatRange operator--(int) {
-//	FloatRange temp(*this);
-//	--first;
-//	return temp;
-//}
+	return (first <= x && x <= second);
+}

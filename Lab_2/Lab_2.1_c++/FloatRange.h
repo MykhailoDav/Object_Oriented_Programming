@@ -37,6 +37,9 @@ public:
 	FloatRange& operator --();
 	FloatRange operator ++(int);
 	FloatRange operator --(int);
+
+	bool RangeCheck(double x) const;
+
 };
 
 
