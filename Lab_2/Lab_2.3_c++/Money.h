@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+//#pragma pack(push, 1)
+
 class Money {
 private:
 	int _500hrn, _200hrn, _100hrn, _50hrn, _20hrn, _10hrn, _5hrn, _2hrn, _1hrn;

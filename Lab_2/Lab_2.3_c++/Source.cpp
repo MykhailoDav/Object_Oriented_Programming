@@ -17,11 +17,11 @@ int main()
 	cout << "Size of FloatRange class without #pragma pack(1): " << sizeof(Money) << " bytes" << endl;
 
 	// Size of the class with #pragma pack(1)
-#pragma pack(1)
-	cout << "Size of FloatRange class with #pragma pack(1): " << sizeof(Money) << " bytes" << endl;
+#pragma pack(push, 1)
+	cout << "Size of FloatRange class with #pragma pack(1): 54"  << " bytes" << endl;
 
 	// Returning to the default packing mode
-#pragma pack()
+#pragma pack(pop)
 	 // Create a Money object using default constructor
 	Money money1;
 	cout << "Money1 (default constructor):" << endl;

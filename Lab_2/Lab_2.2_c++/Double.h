@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+//#pragma pack(push, 1)
 
 class Double {
 private:

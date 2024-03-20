@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+//#pragma pack(push, 1)
 
 using namespace std;
 class FloatRange
