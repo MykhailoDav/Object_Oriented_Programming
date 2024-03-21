@@ -24,11 +24,12 @@ int main() {
     t1.calculateAngles(a, b, c);
     cout << "Angles" << endl << a << endl << b << endl << c << endl;
     cout << "Equilateral : " << Equilateral::getCounter() << endl;
-    cout << "Equilateral::Equilateral : " << Equilateral::Equilateral::getCounter() << endl;
+    cout << "Equilateral::Triangle : " << Equilateral::Triangle::getCounter() << endl;
 
     // Створюємо рівносторонній трикутник на основі трикутника t1
     Equilateral eq1(t1);
-
+    cout << "Equilateral : " << Equilateral::getCounter() << endl;
+    cout << "Equilateral::Triangle : " << Equilateral::Triangle::getCounter() << endl;
     // Виводимо інформацію про рівносторонній трикутник
     cout << "Equilateral eq1:" << endl;
     cout << eq1 << endl;
@@ -54,5 +55,12 @@ int main() {
     cout << "After post-decrement:" << endl;
     cout << eq1 << endl;
 
+
+    cout << endl;
+    cout << endl;
+    Equilateral eq5;
+
+    cout << "Equilateral : " << Equilateral::getCounter() << endl;
+    cout << "Equilateral::Triangle : " << Equilateral::Triangle::getCounter() << endl;
     return 0;
 }
