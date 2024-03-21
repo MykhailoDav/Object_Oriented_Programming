@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Triangle.h"
 #include "Equilateral.h"
 
 using namespace std;
@@ -15,7 +14,7 @@ int main() {
     // Returning to the default packing mode
 #pragma pack(pop)
     // Створюємо трикутник зі сторонами 3, 4, 5
-    Triangle t1(3, 4, 5);
+    Equilateral::Triangle t1(3, 4, 5);
 
     // Виводимо інформацію про трикутник
     cout << "Triangle t1:" << endl;
@@ -24,6 +23,8 @@ int main() {
     double a, b, c;
     t1.calculateAngles(a, b, c);
     cout << "Angles" << endl << a << endl << b << endl << c << endl;
+    cout << "Equilateral : " << Equilateral::getCounter() << endl;
+    cout << "Equilateral::Equilateral : " << Equilateral::Equilateral::getCounter() << endl;
 
     // Створюємо рівносторонній трикутник на основі трикутника t1
     Equilateral eq1(t1);

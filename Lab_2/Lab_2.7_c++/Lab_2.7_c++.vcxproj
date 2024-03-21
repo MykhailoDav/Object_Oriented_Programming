@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f0c32465-81a9-4b29-81d1-2eba8eee74a7}</ProjectGuid>
-    <RootNamespace>Lab25c</RootNamespace>
+    <ProjectGuid>{1bcce41e-1245-403e-95ff-e3471505cbb5}</ProjectGuid>
+    <RootNamespace>Lab27c</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,13 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Equilateral.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Triangle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Equilateral.h" />
-    <ClInclude Include="Triangle.h" />
+    <ClCompile Include="Lab_2.7_c++.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
