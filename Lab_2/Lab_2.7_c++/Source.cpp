@@ -27,6 +27,7 @@ int main() {
         switch (choice) {
         case 1:
             std::cin >> bill;
+            bill.CalculateTotalAmount();
             break;
         case 2:
             std::cout << bill;

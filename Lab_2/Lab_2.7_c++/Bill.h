@@ -32,6 +32,22 @@ public:
     Bill operator --(int);
 
     void CalculateTotalAmount();
+    // Getters and setters for private members
+    std::string GetLastName() const { return lastName; }
+    void SetLastName(const std::string& value) { lastName = value; }
+
+    std::string GetPhoneNumber() const { return phoneNumber; }
+    void SetPhoneNumber(const std::string& value) { phoneNumber = value; }
+
+    double GetMinuteRate() const { return minuteRate; }
+    void SetMinuteRate(double value) { minuteRate = value; }
+
+    double GetDiscount() const { return discount; }
+    void SetDiscount(double value) { discount = value; }
+
+    double GetTotalAmount() const { return totalAmount; }
+    void SetTotalAmount(double value) { totalAmount = value; }
+
     Time startTime;
     Time endTime;
 };

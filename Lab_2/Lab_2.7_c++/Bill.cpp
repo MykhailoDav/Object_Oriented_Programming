@@ -7,7 +7,7 @@
 #include "Bill.h"
 using namespace std;
 
-Bill::Bill() : minuteRate(0), discount(0), totalAmount(0) {}
+Bill::Bill() : minuteRate(0), discount(0), totalAmount(0) { }
 Bill::Bill(const std::string& lastName, const std::string& phoneNumber, double minuteRate, double discount, const Time& startTime, const Time& endTime) {
 	this->lastName = lastName;
 	this->phoneNumber = phoneNumber;
@@ -15,6 +15,7 @@ Bill::Bill(const std::string& lastName, const std::string& phoneNumber, double m
 	this->discount = discount;
 	this->startTime = startTime;
 	this->endTime = endTime;
+	CalculateTotalAmount();
 }
 Bill::Bill(const Bill& other) {
 	lastName = other.lastName;
@@ -24,11 +25,20 @@ Bill::Bill(const Bill& other) {
 	startTime = other.startTime;
 	endTime = other.endTime;
 	totalAmount = other.totalAmount;
+	CalculateTotalAmount();
 }
 
 void Bill::CalculateTotalAmount() {
-	unsigned int durationInSeconds = endTime.DifferenceInSeconds(startTime);
-	double totalCost = durationInSeconds / 60.0 * minuteRate;
+	double startTimeInMinutes = startTime.GetHour() * 60 + startTime.GetMinute() + startTime.GetSecond() / 60;
+	double endTimeInMinutes = endTime.GetHour() * 60 + endTime.GetMinute() + endTime.GetSecond() / 60;
+
+	if (endTimeInMinutes < startTimeInMinutes) {
+		endTimeInMinutes += 24 * 60;
+	}
+
+	int durationInMinutes = endTimeInMinutes - startTimeInMinutes;
+	if (durationInMinutes % 1 != 0) { durationInMinutes = (durationInMinutes++); }
+	double totalCost = durationInMinutes * minuteRate;
 	double discountAmount = totalCost * (discount / 100);
 	totalAmount = totalCost - discountAmount;
 }
