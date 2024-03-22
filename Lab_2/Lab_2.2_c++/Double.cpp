@@ -14,7 +14,6 @@ Double::Double(const Double& r) {
 }
 
 Double::~Double() {
-    // TODO
 }
 
 double Double::GetX() const {
@@ -82,9 +81,28 @@ Double operator^(const Double& a, const Double& b) {
     return t;
 }
 
-Double Double::operator--() {
+
+Double& Double::operator ++()
+{
     x--;
     return *this;
+}
+Double& Double::operator --()
+{
+    x--;
+    return *this;
+}
+Double Double::operator ++(int)
+{
+    Double t(*this);
+    x++;
+    return t;
+}
+Double Double::operator --(int)
+{
+    Double t(*this);
+    x--;
+    return t;
 }
 
 Double::operator std::string() const {

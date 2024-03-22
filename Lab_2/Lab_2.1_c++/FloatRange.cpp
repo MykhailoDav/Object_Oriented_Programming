@@ -93,13 +93,13 @@ FloatRange& FloatRange::operator--() {
 }
 
 FloatRange FloatRange::operator++(int) {
-	FloatRange temp(*this);
+	FloatRange temp=*this;
 	second++;
 	return temp;
 }
 
 FloatRange FloatRange::operator--(int) {
-	FloatRange temp(*this);
+	FloatRange temp = *this;
 	second--;
 	return temp;
 }

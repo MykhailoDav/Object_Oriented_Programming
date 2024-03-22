@@ -27,7 +27,6 @@ public:
     friend Double operator/(const Double&, const Double&);
     friend Double operator%(const Double&, const Double&);
     friend Double operator^(const Double&, const Double&);
-    Double operator--(); // Post-decrement operator
 
     // Type conversion operator
     operator std::string() const;
@@ -35,4 +34,10 @@ public:
     // Stream operators
     friend ostream& operator<<(ostream&, const Double&);
     friend istream& operator>>(istream&, Double&);
+
+    Double& operator ++();
+    Double& operator --();
+    Double operator ++(int);
+    Double operator --(int);
+
 };

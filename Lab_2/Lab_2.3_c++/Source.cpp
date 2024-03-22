@@ -18,7 +18,7 @@ int main()
 
 	// Size of the class with #pragma pack(1)
 #pragma pack(push, 1)
-	cout << "Size of FloatRange class with #pragma pack(1): 54"  << " bytes" << endl;
+	cout << "Size of FloatRange class with #pragma pack(1): 54" << " bytes" << endl;
 
 	// Returning to the default packing mode
 #pragma pack(pop)
@@ -77,16 +77,27 @@ int main()
 	cout << "Sum of Money2 and Money5:" << endl;
 	Money sum = Money::Suma(money2, money5);
 	cout << sum << endl << endl;
+	Money sum1 = money2 + money5;
+	cout << sum1 << endl << endl;
 
 	// Subtract
 	cout << "Subtract Money5 from Money2:" << endl;
-	Money difference = Money::Subtract(money2, money5);
-	cout << difference << endl << endl;
+	Money difference1 = Money::Subtract(money2, money5);
+	cout << difference1 << endl << endl;
+	Money difference2 = money2 - money3;
+	cout << difference2 << endl << endl;
 
 	// Multiply by Decimal
 	cout << "Multiply Money5 by 2.5:" << endl;
-	Money multiplied = money5.MultiplyByDecimal(2.5);
+	Money multiplied = money5 * 2.5;
 	cout << multiplied << endl;
+	Money multiplied1 = money5.MultiplyByDecimal(2.5);
+	cout << multiplied1 << endl;
 
+	cout << endl << "User money" << endl;
+
+	Money m;
+	cin >> m;
+	cout << m << endl;
 	return 0;
 }

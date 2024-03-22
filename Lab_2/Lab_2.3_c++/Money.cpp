@@ -369,3 +369,68 @@ Money Money::MultiplyByDecimal(double multiplier) {
 
 	return newMoney;
 }
+Money operator+(const Money& money1, const Money& money2) {
+	Money result;
+	result._500hrn = money1._500hrn + money2._500hrn;
+	result._200hrn = money1._200hrn + money2._200hrn;
+	result._100hrn = money1._100hrn + money2._100hrn;
+	result._50hrn = money1._50hrn + money2._50hrn;
+	result._20hrn = money1._20hrn + money2._20hrn;
+	result._10hrn = money1._10hrn + money2._10hrn;
+	result._5hrn = money1._5hrn + money2._5hrn;
+	result._2hrn = money1._2hrn + money2._2hrn;
+	result._1hrn = money1._1hrn + money2._1hrn;
+
+	result._50kop = money1._50kop + money2._50kop;
+	result._25kop = money1._25kop + money2._25kop;
+	result._10kop = money1._10kop + money2._10kop;
+	result._5kop = money1._5kop + money2._5kop;
+	result._2kop = money1._2kop + money2._2kop;
+	result._1kop = money1._1kop + money2._1kop;
+
+	return result;
+}
+
+Money operator-(const Money& money1, const Money& money2) {
+	Money result;
+	result._500hrn = money1._500hrn - money2._500hrn;
+	result._200hrn = money1._200hrn - money2._200hrn;
+	result._100hrn = money1._100hrn - money2._100hrn;
+	result._50hrn = money1._50hrn - money2._50hrn;
+	result._20hrn = money1._20hrn - money2._20hrn;
+	result._10hrn = money1._10hrn - money2._10hrn;
+	result._5hrn = money1._5hrn - money2._5hrn;
+	result._2hrn = money1._2hrn - money2._2hrn;
+	result._1hrn = money1._1hrn - money2._1hrn;
+
+	result._50kop = money1._50kop - money2._50kop;
+	result._25kop = money1._25kop - money2._25kop;
+	result._10kop = money1._10kop - money2._10kop;
+	result._5kop = money1._5kop - money2._5kop;
+	result._2kop = money1._2kop - money2._2kop;
+	result._1kop = money1._1kop - money2._1kop;
+
+	return result;
+}
+
+Money operator*(const Money& money, double multiplier) {
+	Money result;
+	result._500hrn = static_cast<int>(money._500hrn * multiplier);
+	result._200hrn = static_cast<int>(money._200hrn * multiplier);
+	result._100hrn = static_cast<int>(money._100hrn * multiplier);
+	result._50hrn = static_cast<int>(money._50hrn * multiplier);
+	result._20hrn = static_cast<int>(money._20hrn * multiplier);
+	result._10hrn = static_cast<int>(money._10hrn * multiplier);
+	result._5hrn = static_cast<int>(money._5hrn * multiplier);
+	result._2hrn = static_cast<int>(money._2hrn * multiplier);
+	result._1hrn = static_cast<int>(money._1hrn * multiplier);
+
+	result._50kop = static_cast<int>(money._50kop * multiplier);
+	result._25kop = static_cast<int>(money._25kop * multiplier);
+	result._10kop = static_cast<int>(money._10kop * multiplier);
+	result._5kop = static_cast<int>(money._5kop * multiplier);
+	result._2kop = static_cast<int>(money._2kop * multiplier);
+	result._1kop = static_cast<int>(money._1kop * multiplier);
+
+	return result;
+}

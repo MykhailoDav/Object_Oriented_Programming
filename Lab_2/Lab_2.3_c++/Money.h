@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -72,6 +73,10 @@ public:
 	static Money Suma(const Money& money1, const Money& money2);
 	static Money Subtract(const Money& money1, const Money& money2);
 	Money MultiplyByDecimal(double multiplier);
+
+	friend Money operator+(const Money& money1, const Money& money2);
+	friend Money operator-(const Money& money1, const Money& money2);
+	friend Money operator*(const Money& money, double multiplier);
 
 	Money& operator=(const Money&);
 	operator string() const;

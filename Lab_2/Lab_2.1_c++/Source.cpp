@@ -43,6 +43,7 @@ int main() {
 	{
 		cout << ("Number is not in range") << endl;
 	}
+
 	cin.get();
 	return 0;
 }
