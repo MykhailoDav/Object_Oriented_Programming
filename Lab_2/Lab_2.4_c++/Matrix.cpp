@@ -137,24 +137,27 @@ Matrix& Matrix::operator=(const Matrix& other) {
 	}
 	return *this;
 }
-Matrix Matrix::operator*(int scalar) const {
-	Matrix result(size);
-	for (int i = 0; i < size; ++i) {
-		for (int j = 0; j < size; ++j) {
-			result.data[i][j] = data[i][j] * scalar;
+Matrix operator*(const Matrix& matrix, int scalar) {
+	Matrix result(matrix.size);
+	for (int i = 0; i < matrix.size; ++i) {
+		for (int j = 0; j < matrix.size; ++j) {
+			result.data[i][j] = matrix.data[i][j] * scalar;
 		}
 	}
 	return result;
 }
-bool Matrix::operator==(const Matrix& other) const {
-	if (size != other.size) return false;
+bool operator==(const Matrix& matrix1, const Matrix& matrix2) {
+	if (matrix1.size != matrix2.size) return false;
 
-	for (int i = 0; i < size; ++i) {
-		for (int j = 0; j < size; ++j) {
-			if (data[i][j] != other.data[i][j]) return false;
+	for (int i = 0; i < matrix1.size; ++i) {
+		for (int j = 0; j < matrix1.size; ++j) {
+			if (matrix1.data[i][j] != matrix2.data[i][j]) return false;
 		}
 	}
 	return true;
+}
+bool operator!=(const Matrix& matrix1, const Matrix& matrix2) {
+	return !(matrix1 == matrix2);
 }
 Matrix::operator string () const
 {

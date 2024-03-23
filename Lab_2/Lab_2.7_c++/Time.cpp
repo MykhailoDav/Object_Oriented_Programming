@@ -171,8 +171,30 @@ void Time::SubtractSeconds(unsigned int seconds) {
 	second = static_cast<unsigned int>(totalSeconds % 60);
 }
 
+
 bool Time::IsEqualTo(Time otherTime) {
 	return ToSeconds() == otherTime.ToSeconds();
+}
+
+
+unsigned int operator-(Time& time1, Time& time2) {
+	return time1.ToSeconds() - time2.ToSeconds();
+}
+Time operator+(const Time& time, unsigned int seconds) {
+	Time result = time;
+	result.AddSeconds(seconds);
+	return result;
+}
+Time operator-(const Time& time, unsigned int seconds) {
+	Time result = time;
+	result.SubtractSeconds(seconds);
+	return result;
+}
+bool operator==(Time& time1, Time& time2) {
+	return time1.ToSeconds() == time2.ToSeconds();
+}
+bool operator!=(Time& time1, Time& time2) {
+	return !(time1 == time2);
 }
 
 unsigned int Time::ToMinutes() {

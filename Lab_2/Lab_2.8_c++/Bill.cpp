@@ -301,6 +301,27 @@ bool Bill::Time::IsEqualTo(Time otherTime) {
 	return ToSeconds() == otherTime.ToSeconds();
 }
 
+unsigned int operator-(Bill::Time& time1, Bill::Time& time2) {
+	return time1.ToSeconds() - time2.ToSeconds();
+}
+Bill::Time operator+(const Bill::Time& time, unsigned int seconds) {
+	Bill::Time result = time;
+	result.AddSeconds(seconds);
+	return result;
+}
+Bill::Time operator-(const Bill::Time& time, unsigned int seconds) {
+	Bill::Time result = time;
+	result.SubtractSeconds(seconds);
+	return result;
+}
+bool operator==(Bill::Time& time1, Bill::Time& time2) {
+	return time1.ToSeconds() == time2.ToSeconds();
+}
+bool operator!=(Bill::Time& time1, Bill::Time& time2) {
+	return !(time1 == time2);
+}
+
+
 unsigned int Bill::Time::ToMinutes() {
 	return ToSeconds() / 60;
 }

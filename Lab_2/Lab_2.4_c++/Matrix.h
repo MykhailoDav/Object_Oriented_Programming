@@ -40,9 +40,9 @@ public:
 
 
     Matrix& operator=(const Matrix& other); // Assignment operator
-    friend Matrix operator*(int scalar) const;     // Scalar multiplication
-    friend bool operator==(const Matrix& other) const; // Matrix comparison
-    friend bool operator!=(const Matrix& other) const; // Matrix comparison
+    friend Matrix operator*(const Matrix& matrix, int scalar);   // Scalar multiplication
+    friend bool operator==(const Matrix& matrix1, const Matrix& matrix2);
+    friend bool operator!=(const Matrix& matrix1, const Matrix& matrix2);
     operator string () const;
     // Overloaded indexing operator for accessing rows
     int* operator[](int index);

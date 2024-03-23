@@ -1,4 +1,4 @@
-0#pragma once
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -32,11 +32,16 @@ public:
 	Time operator --(int);
 
 	unsigned int DifferenceInSeconds(Time otherTime);
-
 	void AddSeconds(unsigned int seconds);
 	void SubtractSeconds(unsigned int seconds);
-
 	bool IsEqualTo(Time otherTime);
+
+	friend unsigned int operator-(const Time& time1, const Time& time2);
+	friend Time operator+(const Time& time, unsigned int seconds);
+	friend Time operator-(const Time& time, unsigned int seconds);
+	friend bool operator==(const Time& time1, const Time& time2);
+	friend bool operator!=(const Time& time1, const Time& time2);
+
 	unsigned int ToMinutes();
 	unsigned int ToSeconds();
 };
